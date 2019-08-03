@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div th:fragment="onLoadJs">
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" th:src="@{/js/jquery-2.1.1.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script th:src="@{/js/agency.js}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script th:src="@{/js/jquery.easing.min.js}"></script>
+    <script th:src="@{/js/classie.js}"></script>
+    <script th:src="@{/js/cbpAnimatedHeader.js}"></script>
+    <script th:src="@{/page/page.js}"></script>
+
+    <script type="text/javascript" charset="utf-8"
+            src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8"
+            src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytA4Jsrn"></script>
+    <script type="text/javascript">
+
+        function search() {
+            var word = $('#word').val();
+            window.location.href = getRootPath_dc() + "search?word=" + word;
+        }
+
+        $(document).keyup(function (event) {
+            if (event.keyCode == 13) {
+                search();
+            }
+        });
+
+        $("#word").keydown(function (event) {
+            if (event.keyCode == 13) {
+                search();
+            }
+        });
+
+        (function () {
+            var appid = 'cytA4Jsrn';
+            var conf = 'prod_fa6af3afe117ad7e54874da5ac2963e4';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 960) {
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+            } else {
+                var loadJs = function (d, a) {
+                    var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                    var b = document.createElement("script");
+                    b.setAttribute("type", "text/javascript");
+                    b.setAttribute("charset", "UTF-8");
+                    b.setAttribute("src", d);
+                    if (typeof a === "function") {
+                        if (window.attachEvent) {
+                            b.onreadystatechange = function () {
+                                var e = b.readyState;
+                                if (e === "loaded" || e === "complete") {
+                                    b.onreadystatechange = null;
+                                    a()
+                                }
+                            }
+                        } else {
+                            b.onload = a
+                        }
+                    }
+                    c.appendChild(b)
+                };
+                loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+                    window.changyan.api.config({appid: appid, conf: conf})
+                });
+            }
+        })(); </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?96a910442b69d3b86cd4791865bb9bbe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        var backButton = $('.back_to_top');
+
+        function backToTop() {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 800);
+        }
+
+        backButton.on('click', backToTop);
+        $(window).on('scroll', function () {/*当滚动条的垂直位置大于浏览器所能看到的页面的那部分的高度时，回到顶部按钮就显示 */
+            if ($(window).scrollTop() > 800)
+                backButton.fadeIn();
+            else
+                backButton.fadeOut();
+        });
+        $(window).trigger('scroll');
+        /*触发滚动事件，避免刷新的时候显示回到顶部按钮*/
+    </script>
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <!--<script type='text/javascript'>-->
+    <!--(function () {-->
+    <!--var widget_id = '5LZSoP8ABc';-->
+    <!--var d = document;-->
+    <!--var w = window;-->
+
+    <!--function l() {-->
+    <!--var s = document.createElement('script');-->
+    <!--s.type = 'text/javascript';-->
+    <!--s.async = true;-->
+    <!--s.src = '//code.jivosite.com/script/widget/' + widget_id;-->
+    <!--var ss = document.getElementsByTagName('script')[0];-->
+    <!--ss.parentNode.insertBefore(s, ss);-->
+    <!--}-->
+
+    <!--if (d.readyState == 'complete') {-->
+    <!--l();-->
+    <!--} else {-->
+    <!--if (w.attachEvent) {-->
+    <!--w.attachEvent('onload', l);-->
+    <!--} else {-->
+    <!--w.addEventListener('load', l, false);-->
+    <!--}-->
+    <!--}-->
+    <!--})();</script>-->
+    <!-- {/literal} END JIVOSITE CODE -->
+</div>
+</body>
+</html>
