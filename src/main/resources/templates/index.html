@@ -20,12 +20,11 @@
 					<div class="col-md-12 text-center">
 						<h1>Welcome</h1>
 						<hr>
-						<p>小生不才，未得姑娘睐。
-							叨扰姑娘良久，还望姑娘莫怪。
-							从此山高路远，纵马扬鞭，定铭记姑娘于心间。
-							待他披锦归时，卿若未嫁，必与你相恋。
-							如若不然，便遥祝红颜，愿你三冬暖，愿你春不寒，愿你天黑有灯，下雨有伞，愿你，余生有良人相伴。
-							。</p>
+						<p>
+							鹿丸:我本来想过着随便当个忍者，随便赚点钱。然后和不美又不丑的女人结婚生两个小孩，</br>
+							第一个是女孩，第二个是男孩。等长女结婚，儿子也能够独挡一面的时候，</br>
+							就从忍者的工作退休。之后，每天过着下将棋或围棋的悠闲隐居生活。</br>
+							然后比自己的老婆还要早老死。</p>
 					</div>
 				</div><!-- /header-text -->
 				</div>
@@ -37,7 +36,7 @@
 					<div class="col-md-12 text-center">
 						<h1>Welcome</h1>
 						<hr>
-						<p>此生何用声声叹，道不尽流年。</p>
+						<p>凯:一个不相信自己的人，就没有努力做事的价值</p>
 					</div>
 				</div><!-- /header-text -->
 			</div>
@@ -66,7 +65,7 @@
 
 		<div class="search d7 site-branding" style="float:right;">
 			<form  style="float:right;">
-				<input type="text" placeholder="九万里悟道..." th:value="${word}" id="word">
+				<input type="text" placeholder="迷路了…" th:value="${word}" id="word">
 				<button type="button" onclick="search();" id="btn" ></button>
 			</form>
 		</div>
@@ -96,7 +95,7 @@
 								</div>
 
 								<br>
-								<span th:each="tl,iterStat : ${al.tagInfoList}">
+								<span th:each="tl,iterStat : ${al.tagInfoList }">
 								<i class="fa fa-tags"></i><a target="_blank"  th:href="${'/tag/'+tl.tagName}" th:text="${tl.tagName}"></a>
 								</span>
 							</div>
